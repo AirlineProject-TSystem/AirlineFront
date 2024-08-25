@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="card mb-4">
+    <div class="card-header text-center">
+      <h2>Flight Information</h2>
+    </div>
+    <div class="card-body">
+      <div class="mb-3 d-flex align-items-center">
+        <input type="text" class="form-control me-2" placeholder="Origin" [(ngModel)]="origin">
+        <input type="text" class="form-control me-2" placeholder="Destination" [(ngModel)]="destination">
+        <button class="btn btn-primary me-2" (click)="searchFlights()">Search</button>
+        <button class="btn btn-secondary" (click)="clearSearch()">Clear</button>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Flight Number</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let flight of flights">
+            <td>{{ flight.flightNumber }}</td>
+            <td>{{ flight.origin }}</td>
+            <td>{{ flight.destination }}</td>
+            <td>{{ flight.departureTime | date:'short' }}</td>
+            <td>{{ flight.arrivalTime | date:'short' }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="deleteFlight(flight.id)">
+                <i class="fas fa-trash-alt fa-sm"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination d-flex justify-content-center align-items-center">
+        <button class="btn btn-secondary me-2" (click)="previousPage()" [disabled]="currentPage === 0">Previous</button>
+        <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+        <button class="btn btn-secondary ms-2" (click)="nextPage()" [disabled]="(currentPage + 1) * pageSize >= totalFlights">Next</button>
+      </div>
+    </div>
+  </div>
+  <app-flight-form></app-flight-form>
+</div>

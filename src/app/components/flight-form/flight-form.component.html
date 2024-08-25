@@ -1,0 +1,74 @@
+<!-- <div class="container mt-5">
+  <h2 class="mb-4 text-center">Add New Flight</h2>
+  <form [formGroup]="flightForm" (ngSubmit)="onSubmit()">
+    <div class="row mb-3">
+      <div class="col-sm-3">
+        <label for="flightNumber" class="form-label">Flight Number</label>
+        <input type="text" id="flightNumber" class="form-control" formControlName="flightNumber" placeholder="FL050">
+      </div>
+      <div class="col-sm-4">
+        <label for="origin" class="form-label">Origin</label>
+        <input type="text" id="origin" class="form-control" formControlName="origin" placeholder="New York">
+      </div>
+      <div class="col-sm-5">
+        <label for="destination" class="form-label">Destination</label>
+        <input type="text" id="destination" class="form-control" formControlName="destination" placeholder="Las Vegas">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-6">
+        <label for="departureTime" class="form-label">Departure Time</label>
+        <input type="datetime-local" id="departureTime" class="form-control" formControlName="departureTime">
+      </div>
+      <div class="col-sm-6">
+        <label for="arrivalTime" class="form-label">Arrival Time</label>
+        <input type="datetime-local" id="arrivalTime" class="form-control" formControlName="arrivalTime">
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col text-center">
+        <button type="submit" class="btn btn-primary me-2">Add Flight</button>
+        <button type="button" class="btn btn-secondary" (click)="onClear()">Clear</button>
+      </div>
+    </div>
+  </form>
+</div> -->
+
+<div class="card mt-5 mb-5">
+  <div class="card-header text-center">
+    <h2>Add New Flight</h2>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="flightForm" (ngSubmit)="onSubmit()">
+      <div class="row mb-3">
+        <div class="col-sm-3">
+          <label for="flightNumber" class="form-label">Flight Number</label>
+          <input type="text" id="flightNumber" class="form-control" formControlName="flightNumber" placeholder="FL050">
+        </div>
+        <div class="col-sm-4">
+          <label for="origin" class="form-label">Origin</label>
+          <input type="text" id="origin" class="form-control" formControlName="origin" placeholder="New York">
+        </div>
+        <div class="col-sm-5">
+          <label for="destination" class="form-label">Destination</label>
+          <input type="text" id="destination" class="form-control" formControlName="destination" placeholder="Las Vegas">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-6">
+          <label for="departureTime" class="form-label">Departure Time</label>
+          <input type="datetime-local" id="departureTime" class="form-control" formControlName="departureTime">
+        </div>
+        <div class="col-sm-6">
+          <label for="arrivalTime" class="form-label">Arrival Time</label>
+          <input type="datetime-local" id="arrivalTime" class="form-control" formControlName="arrivalTime">
+        </div>
+      </div>
+      <div class="col text-center">
+        <button type="submit" class="btn btn-primary me-2">Add Flight</button>
+        <button type="button" class="btn btn-secondary" (click)="onClear()">Clear</button>
+      </div>
+
+    </form>
+  </div>
+</div>
